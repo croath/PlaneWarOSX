@@ -27,6 +27,7 @@
 		27A08EE117C80370007F53D3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A08EDA17C80370007F53D3 /* AppDelegate.m */; };
 		27A08EE217C80370007F53D3 /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A08EDD17C80370007F53D3 /* MainScene.m */; };
 		27A08EE317C80370007F53D3 /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A08EDF17C80370007F53D3 /* MainView.m */; };
+		27A08EE517C80A37007F53D3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27A08EE417C80A37007F53D3 /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		27A08EDD17C80370007F53D3 /* MainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainScene.m; sourceTree = "<group>"; };
 		27A08EDE17C80370007F53D3 /* MainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainView.h; sourceTree = "<group>"; };
 		27A08EDF17C80370007F53D3 /* MainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainView.m; sourceTree = "<group>"; };
+		27A08EE417C80A37007F53D3 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +221,7 @@
 		27A08EDB17C80370007F53D3 /* MainScene */ = {
 			isa = PBXGroup;
 			children = (
+				27A08EE417C80A37007F53D3 /* MainMenu.xib */,
 				27A08EDC17C80370007F53D3 /* MainScene.h */,
 				27A08EDD17C80370007F53D3 /* MainScene.m */,
 				27A08EDE17C80370007F53D3 /* MainView.h */,
@@ -312,6 +315,7 @@
 				27A08ED617C8026A007F53D3 /* z2.png in Resources */,
 				2747177A17C7CA990098664D /* Images.xcassets in Resources */,
 				27A08ED417C8026A007F53D3 /* plane.png in Resources */,
+				27A08EE517C80A37007F53D3 /* MainMenu.xib in Resources */,
 				27A08ED017C8026A007F53D3 /* bg.png in Resources */,
 				27A08ED517C8026A007F53D3 /* z1.png in Resources */,
 				2747176817C7CA990098664D /* InfoPlist.strings in Resources */,
