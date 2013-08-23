@@ -12,16 +12,21 @@
 		2747176817C7CA990098664D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2747176617C7CA990098664D /* InfoPlist.strings */; };
 		2747176A17C7CA990098664D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2747176917C7CA990098664D /* main.m */; };
 		2747176E17C7CA990098664D /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2747176C17C7CA990098664D /* Credits.rtf */; };
-		2747177017C7CA990098664D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2747176F17C7CA990098664D /* MainMenu.xib */; };
-		2747177217C7CA990098664D /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 2747177117C7CA990098664D /* MainScene.m */; };
-		2747177517C7CA990098664D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2747177417C7CA990098664D /* AppDelegate.m */; };
-		2747177817C7CA990098664D /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 2747177717C7CA990098664D /* Spaceship.png */; };
 		2747177A17C7CA990098664D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2747177917C7CA990098664D /* Images.xcassets */; };
 		2747178117C7CA990098664D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2747178017C7CA990098664D /* XCTest.framework */; };
 		2747178217C7CA990098664D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2747175B17C7CA990098664D /* Cocoa.framework */; };
 		2747178A17C7CA990098664D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2747178817C7CA990098664D /* InfoPlist.strings */; };
 		2747178C17C7CA990098664D /* planeWarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2747178B17C7CA990098664D /* planeWarTests.m */; };
-		27A08EC617C7F585007F53D3 /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A08EC517C7F585007F53D3 /* MainView.m */; };
+		27A08ED017C8026A007F53D3 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 27A08EC917C8026A007F53D3 /* bg.png */; };
+		27A08ED117C8026A007F53D3 /* enemy1.png in Resources */ = {isa = PBXBuildFile; fileRef = 27A08ECA17C8026A007F53D3 /* enemy1.png */; };
+		27A08ED217C8026A007F53D3 /* enemy2.png in Resources */ = {isa = PBXBuildFile; fileRef = 27A08ECB17C8026A007F53D3 /* enemy2.png */; };
+		27A08ED317C8026A007F53D3 /* enemy3.png in Resources */ = {isa = PBXBuildFile; fileRef = 27A08ECC17C8026A007F53D3 /* enemy3.png */; };
+		27A08ED417C8026A007F53D3 /* plane.png in Resources */ = {isa = PBXBuildFile; fileRef = 27A08ECD17C8026A007F53D3 /* plane.png */; };
+		27A08ED517C8026A007F53D3 /* z1.png in Resources */ = {isa = PBXBuildFile; fileRef = 27A08ECE17C8026A007F53D3 /* z1.png */; };
+		27A08ED617C8026A007F53D3 /* z2.png in Resources */ = {isa = PBXBuildFile; fileRef = 27A08ECF17C8026A007F53D3 /* z2.png */; };
+		27A08EE117C80370007F53D3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A08EDA17C80370007F53D3 /* AppDelegate.m */; };
+		27A08EE217C80370007F53D3 /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A08EDD17C80370007F53D3 /* MainScene.m */; };
+		27A08EE317C80370007F53D3 /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A08EDF17C80370007F53D3 /* MainView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,20 +51,25 @@
 		2747176917C7CA990098664D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2747176B17C7CA990098664D /* planeWar-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "planeWar-Prefix.pch"; sourceTree = "<group>"; };
 		2747176D17C7CA990098664D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		2747176F17C7CA990098664D /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
-		2747177117C7CA990098664D /* MainScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainScene.m; sourceTree = "<group>"; };
-		2747177317C7CA990098664D /* MainScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainScene.h; sourceTree = "<group>"; };
-		2747177417C7CA990098664D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2747177617C7CA990098664D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		2747177717C7CA990098664D /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		2747177917C7CA990098664D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2747177F17C7CA990098664D /* planeWarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = planeWarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2747178017C7CA990098664D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		2747178717C7CA990098664D /* planeWarTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "planeWarTests-Info.plist"; sourceTree = "<group>"; };
 		2747178917C7CA990098664D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2747178B17C7CA990098664D /* planeWarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = planeWarTests.m; sourceTree = "<group>"; };
-		27A08EC417C7F585007F53D3 /* MainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainView.h; sourceTree = "<group>"; };
-		27A08EC517C7F585007F53D3 /* MainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainView.m; sourceTree = "<group>"; };
+		27A08EC917C8026A007F53D3 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
+		27A08ECA17C8026A007F53D3 /* enemy1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemy1.png; sourceTree = "<group>"; };
+		27A08ECB17C8026A007F53D3 /* enemy2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemy2.png; sourceTree = "<group>"; };
+		27A08ECC17C8026A007F53D3 /* enemy3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemy3.png; sourceTree = "<group>"; };
+		27A08ECD17C8026A007F53D3 /* plane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plane.png; sourceTree = "<group>"; };
+		27A08ECE17C8026A007F53D3 /* z1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = z1.png; sourceTree = "<group>"; };
+		27A08ECF17C8026A007F53D3 /* z2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = z2.png; sourceTree = "<group>"; };
+		27A08ED917C80370007F53D3 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		27A08EDA17C80370007F53D3 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		27A08EDC17C80370007F53D3 /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScene.h; sourceTree = "<group>"; };
+		27A08EDD17C80370007F53D3 /* MainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainScene.m; sourceTree = "<group>"; };
+		27A08EDE17C80370007F53D3 /* MainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainView.h; sourceTree = "<group>"; };
+		27A08EDF17C80370007F53D3 /* MainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,15 +137,9 @@
 		2747176317C7CA990098664D /* planeWar */ = {
 			isa = PBXGroup;
 			children = (
-				2747176F17C7CA990098664D /* MainMenu.xib */,
-				2747177117C7CA990098664D /* MainScene.m */,
-				2747177317C7CA990098664D /* MainScene.h */,
-				2747177417C7CA990098664D /* AppDelegate.m */,
-				2747177617C7CA990098664D /* AppDelegate.h */,
-				27A08EC417C7F585007F53D3 /* MainView.h */,
-				27A08EC517C7F585007F53D3 /* MainView.m */,
-				2747177717C7CA990098664D /* Spaceship.png */,
+				27A08ED717C80370007F53D3 /* Source */,
 				2747177917C7CA990098664D /* Images.xcassets */,
+				27A08EC717C8026A007F53D3 /* Resources */,
 				2747176417C7CA990098664D /* Supporting Files */,
 			);
 			path = planeWar;
@@ -169,6 +173,65 @@
 				2747178817C7CA990098664D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		27A08EC717C8026A007F53D3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				27A08EC817C8026A007F53D3 /* Images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		27A08EC817C8026A007F53D3 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				27A08EC917C8026A007F53D3 /* bg.png */,
+				27A08ECA17C8026A007F53D3 /* enemy1.png */,
+				27A08ECB17C8026A007F53D3 /* enemy2.png */,
+				27A08ECC17C8026A007F53D3 /* enemy3.png */,
+				27A08ECD17C8026A007F53D3 /* plane.png */,
+				27A08ECE17C8026A007F53D3 /* z1.png */,
+				27A08ECF17C8026A007F53D3 /* z2.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		27A08ED717C80370007F53D3 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				27A08ED817C80370007F53D3 /* App */,
+				27A08EDB17C80370007F53D3 /* MainScene */,
+				27A08EE017C80370007F53D3 /* Sprite */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		27A08ED817C80370007F53D3 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				27A08ED917C80370007F53D3 /* AppDelegate.h */,
+				27A08EDA17C80370007F53D3 /* AppDelegate.m */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		27A08EDB17C80370007F53D3 /* MainScene */ = {
+			isa = PBXGroup;
+			children = (
+				27A08EDC17C80370007F53D3 /* MainScene.h */,
+				27A08EDD17C80370007F53D3 /* MainScene.m */,
+				27A08EDE17C80370007F53D3 /* MainView.h */,
+				27A08EDF17C80370007F53D3 /* MainView.m */,
+			);
+			path = MainScene;
+			sourceTree = "<group>";
+		};
+		27A08EE017C80370007F53D3 /* Sprite */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sprite;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,11 +309,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2747177817C7CA990098664D /* Spaceship.png in Resources */,
+				27A08ED617C8026A007F53D3 /* z2.png in Resources */,
 				2747177A17C7CA990098664D /* Images.xcassets in Resources */,
+				27A08ED417C8026A007F53D3 /* plane.png in Resources */,
+				27A08ED017C8026A007F53D3 /* bg.png in Resources */,
+				27A08ED517C8026A007F53D3 /* z1.png in Resources */,
 				2747176817C7CA990098664D /* InfoPlist.strings in Resources */,
+				27A08ED117C8026A007F53D3 /* enemy1.png in Resources */,
+				27A08ED317C8026A007F53D3 /* enemy3.png in Resources */,
+				27A08ED217C8026A007F53D3 /* enemy2.png in Resources */,
 				2747176E17C7CA990098664D /* Credits.rtf in Resources */,
-				2747177017C7CA990098664D /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,10 +337,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2747177217C7CA990098664D /* MainScene.m in Sources */,
-				27A08EC617C7F585007F53D3 /* MainView.m in Sources */,
+				27A08EE117C80370007F53D3 /* AppDelegate.m in Sources */,
+				27A08EE317C80370007F53D3 /* MainView.m in Sources */,
 				2747176A17C7CA990098664D /* main.m in Sources */,
-				2747177517C7CA990098664D /* AppDelegate.m in Sources */,
+				27A08EE217C80370007F53D3 /* MainScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

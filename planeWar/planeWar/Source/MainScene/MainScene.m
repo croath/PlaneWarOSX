@@ -8,9 +8,14 @@
 
 #import "MainScene.h"
 
+#define ENEMIES_MAX_COUNT     20
+
 @interface MainScene(){
   SKLabelNode *_scoreLabel;
+  
   SKSpriteNode *_player;
+  
+  NSMutableArray *_enemiesArray;
 }
 
 @end
@@ -38,14 +43,10 @@
 }
 
 - (void)setUpPlayer{
-  _player = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
+  _player = [SKSpriteNode spriteNodeWithImageNamed:@"plane"];
   _player.position = CGPointMake(CGRectGetMidX(self.frame), 50);
-  _player.scale = 0.2;
+  _player.scale = 0.5;
   [self addChild:_player];
-}
-
-- (void)mouseMoved:(NSEvent *)theEvent{
-  
 }
 
 -(void)update:(CFTimeInterval)currentTime {
