@@ -25,6 +25,7 @@
 -(id)initWithSize:(CGSize)size {
   if (self = [super initWithSize:size]) {
     self.backgroundColor = [SKColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1.0];
+//    [self setBackgroundColor:[SKColor colorWithPatternImage:[NSImage imageNamed:@"bg"]]];
     [self addScoreLabel];
     [self setUpPlayer];
   }
