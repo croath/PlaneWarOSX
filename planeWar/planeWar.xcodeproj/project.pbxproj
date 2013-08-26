@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		271DB62417CAFAA80027C9C9 /* PlayerSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 271DB62317CAFAA80027C9C9 /* PlayerSprite.m */; };
 		271DB62717CB01C20027C9C9 /* PlaneSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 271DB62617CB01C20027C9C9 /* PlaneSprite.m */; };
+		271DB62A17CB5FB70027C9C9 /* EnemySprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 271DB62917CB5FB70027C9C9 /* EnemySprite.m */; };
 		2747175C17C7CA990098664D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2747175B17C7CA990098664D /* Cocoa.framework */; };
 		2747175E17C7CA990098664D /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2747175D17C7CA990098664D /* SpriteKit.framework */; };
 		2747176817C7CA990098664D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2747176617C7CA990098664D /* InfoPlist.strings */; };
@@ -47,6 +48,8 @@
 		271DB62317CAFAA80027C9C9 /* PlayerSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerSprite.m; sourceTree = "<group>"; };
 		271DB62517CB01C20027C9C9 /* PlaneSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaneSprite.h; sourceTree = "<group>"; };
 		271DB62617CB01C20027C9C9 /* PlaneSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaneSprite.m; sourceTree = "<group>"; };
+		271DB62817CB5FB70027C9C9 /* EnemySprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemySprite.h; sourceTree = "<group>"; };
+		271DB62917CB5FB70027C9C9 /* EnemySprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnemySprite.m; sourceTree = "<group>"; };
 		2747175817C7CA990098664D /* planeWar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = planeWar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2747175B17C7CA990098664D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		2747175D17C7CA990098664D /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
@@ -243,6 +246,8 @@
 				271DB62617CB01C20027C9C9 /* PlaneSprite.m */,
 				271DB62217CAFAA80027C9C9 /* PlayerSprite.h */,
 				271DB62317CAFAA80027C9C9 /* PlayerSprite.m */,
+				271DB62817CB5FB70027C9C9 /* EnemySprite.h */,
+				271DB62917CB5FB70027C9C9 /* EnemySprite.m */,
 			);
 			path = Sprite;
 			sourceTree = "<group>";
@@ -354,6 +359,7 @@
 				27A08EE117C80370007F53D3 /* AppDelegate.m in Sources */,
 				271DB62717CB01C20027C9C9 /* PlaneSprite.m in Sources */,
 				27A08EE317C80370007F53D3 /* MainView.m in Sources */,
+				271DB62A17CB5FB70027C9C9 /* EnemySprite.m in Sources */,
 				271DB62417CAFAA80027C9C9 /* PlayerSprite.m in Sources */,
 				2747176A17C7CA990098664D /* main.m in Sources */,
 				27A08EE217C80370007F53D3 /* MainScene.m in Sources */,

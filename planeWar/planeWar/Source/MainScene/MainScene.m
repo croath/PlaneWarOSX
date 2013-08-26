@@ -7,6 +7,8 @@
 //
 
 #import "MainScene.h"
+#import "PlayerSprite.h"
+#import "EnemySprite.h"
 
 #define ENEMIES_MAX_COUNT     20
 
@@ -28,6 +30,7 @@
 //    [self setBackgroundColor:[SKColor colorWithPatternImage:[NSImage imageNamed:@"bg"]]];
     [self addScoreLabel];
     [self setUpPlayer];
+    [self setUpEnemies];
   }
   return self;
 }
@@ -50,8 +53,29 @@
   [self addChild:_player];
 }
 
+- (void)setUpEnemies{
+  _enemiesArray = [NSMutableArray arrayWithCapacity:ENEMIES_MAX_COUNT];
+  for (int i = 0; i < [_enemiesArray count]; i ++) {
+    EnemySprite *sprite = [EnemySprite newEnemyWithEnemyType:EnemyTypeSmall];
+    [_enemiesArray addObject:sprite];
+  }
+}
+
+- (EnemySprite*)availabelSprite{
+  for (EnemySprite *sprite in _enemiesArray) {
+    if (![sprite inScene]) {
+      return sprite;
+    }
+  }
+  return nil;
+}
+
 -(void)update:(CFTimeInterval)currentTime {
   /* Called before each frame is rendered */
+  [self movePlayer];
+}
+
+- (void)movePlayer{
   NSPoint mouseLoc = [MainView mousePoint];
   SKAction *action = [SKAction moveTo:mouseLoc duration:0.05];
   [_player runAction:action];

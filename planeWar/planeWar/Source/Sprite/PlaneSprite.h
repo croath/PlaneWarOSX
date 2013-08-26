@@ -14,4 +14,6 @@
 @property (nonatomic) CGFloat blood;
 @property (nonatomic) CGFloat maxBlood;
 
+@property (nonatomic) BOOL inScene;
+
 @end
