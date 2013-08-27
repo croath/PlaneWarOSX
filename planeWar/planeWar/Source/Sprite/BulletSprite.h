@@ -20,6 +20,6 @@ typedef enum{
 @property (nonatomic) CGFloat speed;
 @property (nonatomic) BulletType bulletType;
 
-- (instancetype)newBulletWithType:(BulletType)type;
-- (instancetype)newBulletWithType:(BulletType)type position:(CGPoint)position;
++ (instancetype)newBulletWithType:(BulletType)type;
++ (instancetype)newBulletWithType:(BulletType)type position:(CGPoint)position;
 @end

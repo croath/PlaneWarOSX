@@ -10,7 +10,7 @@
 
 @implementation BulletSprite
 
-- (instancetype)newBulletWithType:(BulletType)type{
++ (instancetype)newBulletWithType:(BulletType)type{
   BulletSprite *sprite;
   if (type == BulletTypeNormal) {
     sprite = [BulletSprite spriteNodeWithImageNamed:@"z1"];
@@ -37,8 +37,8 @@
   return sprite;
 }
 
-- (instancetype)newBulletWithType:(BulletType)type position:(CGPoint)position{
-  BulletSprite *sprite;
++ (instancetype)newBulletWithType:(BulletType)type position:(CGPoint)position{
+  BulletSprite *sprite = [self newBulletWithType:type];
   [sprite setPosition:position];
   return sprite;
 }

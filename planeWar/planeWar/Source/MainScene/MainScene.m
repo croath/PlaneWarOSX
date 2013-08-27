@@ -9,8 +9,10 @@
 #import "MainScene.h"
 #import "PlayerSprite.h"
 #import "EnemySprite.h"
+#import "BulletSprite.h"
 
 #define ENEMIES_MAX_COUNT     100
+#define BULLET_RATE           15
 
 @interface MainScene(){
   NSUInteger _score;
@@ -61,16 +63,40 @@
     _enemiesArray = [NSMutableArray arrayWithCapacity:ENEMIES_MAX_COUNT];
     for (int i = 0; i < ENEMIES_MAX_COUNT; i ++) {
       EnemySprite *sprite = [EnemySprite newEnemyWithEnemyType:EnemyTypeSmall];
-      if (![sprite inParentHierarchy:self]) {
+      if (sprite.parent != self) {
         [_enemiesArray addObject:sprite];
       }
     }
   }
 }
 
+static int bullet_setup_count = 0;
+- (void)setUpOneBullet{
+  if (bullet_setup_count >= BULLET_RATE) {
+    bullet_setup_count = 0;
+  } else {
+    bullet_setup_count ++;
+    return;
+  }
+  
+  @autoreleasepool {
+    NSPoint position = _player.position;
+    BulletSprite *bullet = [BulletSprite newBulletWithType:BulletTypeNormal position:position];
+    [self addChild:bullet];
+    
+    NSPoint dest  = CGPointMake(position.x, CGRectGetMaxY(self.frame) + bullet.size.height);
+    CGFloat time = fabs(dest.y - position.y) / bullet.speed;
+    SKAction *action = [SKAction moveTo:dest duration:time];
+    [bullet runAction:action completion:^{
+      [bullet removeFromParent];
+    }];
+  }
+}
+
 - (EnemySprite*)availabelSprite{
   for (EnemySprite *sprite in _enemiesArray) {
-    if (![sprite inScene]) {
+    if (sprite != nil && sprite.parent != self) {
+      [sprite removeAllActions];
       return sprite;
     }
   }
@@ -81,6 +107,7 @@
   /* Called before each frame is rendered */
   [self movePlayer];
   [self addEnemies];
+  [self setUpOneBullet];
 }
 
 - (void)movePlayer{
@@ -91,22 +118,19 @@
 
 - (void)addEnemies{
   EnemySprite *sprite = [self availabelSprite];
-  if (sprite != nil && rand() % 77 == 0) {
-    [sprite setInScene:YES];
-    CGFloat x = random()%1000*((CGRectGetMaxX(self.frame) - sprite.frame.size.width)/1000) + sprite.frame.size.width/2;
-    CGPoint position = CGPointMake(x, CGRectGetMaxY(self.frame) + sprite.frame.size.height);
+  if (rand() % 77 == 0) {
+    CGFloat x = random()%1000*((CGRectGetMaxX(self.frame) - sprite.size.width)/1000) + sprite.size.width/2;
+    CGPoint position = CGPointMake(x, CGRectGetMaxY(self.frame) + sprite.size.height);
+    NSLog(@"%f", position.y);
     [sprite setPosition:position];
-    CGPoint dest = CGPointMake(x, -sprite.frame.size.height);
+    CGPoint dest = CGPointMake(x, -sprite.size.height);
     [self addChild:sprite];
     
     CGFloat time = fabs(dest.y - position.y) / sprite.speed;
     SKAction *action = [SKAction moveTo:dest duration:time];
     
     [sprite runAction:action completion:^{
-      [sprite setInScene:NO];
       [sprite removeFromParent];
-      _score += 1000;
-      [self updateScore];
     }];
   }
 }
@@ -123,6 +147,17 @@
 }
 
 - (void)didBeginContact:(SKPhysicsContact *)contact{
-  [self restart];
+  if ([contact.bodyA.node isKindOfClass:[PlayerSprite class]] ||
+      [contact.bodyB.node isKindOfClass:[PlayerSprite class]]) {
+    [self restart];
+  } else {
+    [contact.bodyA.node removeAllActions];
+    [contact.bodyA.node removeFromParent];
+    
+    [contact.bodyB.node removeAllActions];
+    [contact.bodyB.node removeFromParent];
+    _score += 1000;
+    [self updateScore];
+  }
 }
 @end
