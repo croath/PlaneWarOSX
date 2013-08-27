@@ -33,9 +33,9 @@
   [sprite setSpeed:10.f];
   
   SKPhysicsBody *pb = [SKPhysicsBody bodyWithRectangleOfSize:sprite.size];
-  [pb setCategoryBitMask:EnemyPlaneBit];
-  [pb setCollisionBitMask:PlayerPlaneBit];
-  [pb setContactTestBitMask:PlayerPlaneBit];
+  [pb setCategoryBitMask:EnemyPlaneMask];
+  [pb setCollisionBitMask:PlayerPlaneMask | BulletMask];
+  [pb setContactTestBitMask:PlayerPlaneMask | BulletMask];
   [pb setUsesPreciseCollisionDetection:YES];
   [pb setAffectedByGravity:NO];
   [pb setDynamic:YES];

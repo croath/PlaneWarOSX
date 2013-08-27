@@ -7,7 +7,19 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "PhysicsMasks.h"
+
+typedef enum{
+  BulletTypeNormal,
+  BulletTypePro
+}BulletType;
 
 @interface BulletSprite : SKSpriteNode
 
+@property (nonatomic) CGFloat power;
+@property (nonatomic) CGFloat speed;
+@property (nonatomic) BulletType bulletType;
+
+- (instancetype)newBulletWithType:(BulletType)type;
+- (instancetype)newBulletWithType:(BulletType)type position:(CGPoint)position;
 @end

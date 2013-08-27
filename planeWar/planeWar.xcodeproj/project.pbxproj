@@ -84,6 +84,7 @@
 		27A08EE417C80A37007F53D3 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		27A5F38317CC8B2900C2DB6F /* BulletSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BulletSprite.h; sourceTree = "<group>"; };
 		27A5F38417CC8B2900C2DB6F /* BulletSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BulletSprite.m; sourceTree = "<group>"; };
+		27A5F38617CC900500C2DB6F /* PhysicsMasks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsMasks.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +254,7 @@
 				271DB62917CB5FB70027C9C9 /* EnemySprite.m */,
 				27A5F38317CC8B2900C2DB6F /* BulletSprite.h */,
 				27A5F38417CC8B2900C2DB6F /* BulletSprite.m */,
+				27A5F38617CC900500C2DB6F /* PhysicsMasks.h */,
 			);
 			path = Sprite;
 			sourceTree = "<group>";

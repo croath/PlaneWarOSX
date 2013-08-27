@@ -7,11 +7,7 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
-
-typedef enum{
-  PlayerPlaneBit    = 0x1 << 0,
-  EnemyPlaneBit     = 0x1 << 1,
-}PhysicsTypeBit;
+#import "PhysicsMasks.h"
 
 @interface PlaneSprite : SKSpriteNode
 
