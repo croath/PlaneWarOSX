@@ -8,6 +8,11 @@
 
 #import <SpriteKit/SpriteKit.h>
 
+typedef enum{
+  PlayerPlaneBit    = 0x1 << 0,
+  EnemyPlaneBit     = 0x1 << 1,
+}PhysicsTypeBit;
+
 @interface PlaneSprite : SKSpriteNode
 
 @property (nonatomic) CGFloat speed;

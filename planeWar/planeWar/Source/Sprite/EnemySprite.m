@@ -32,6 +32,16 @@
   [sprite setScale:0.5f];
   [sprite setSpeed:10.f];
   
+  SKPhysicsBody *pb = [SKPhysicsBody bodyWithRectangleOfSize:sprite.size];
+  [pb setCategoryBitMask:EnemyPlaneBit];
+  [pb setCollisionBitMask:PlayerPlaneBit];
+  [pb setContactTestBitMask:PlayerPlaneBit];
+  [pb setUsesPreciseCollisionDetection:YES];
+  [pb setAffectedByGravity:NO];
+  [pb setDynamic:YES];
+  [pb setAllowsRotation:NO];
+  
+  [sprite setPhysicsBody:pb];
   return sprite;
 }
 

@@ -15,6 +15,17 @@
   [sprite setScale:0.5f];
   
   [sprite setMaxBlood:1.f];
+  
+  SKPhysicsBody *pb = [SKPhysicsBody bodyWithCircleOfRadius:sprite.size.width/16];
+  [pb setCategoryBitMask:PlayerPlaneBit];
+  [pb setCollisionBitMask:EnemyPlaneBit];
+  [pb setContactTestBitMask:EnemyPlaneBit];
+  [pb setUsesPreciseCollisionDetection:YES];
+  [pb setAffectedByGravity:NO];
+  [pb setDynamic:YES];
+  [pb setAllowsRotation:NO];
+  
+  [sprite setPhysicsBody:pb];
   return sprite;
 }
 

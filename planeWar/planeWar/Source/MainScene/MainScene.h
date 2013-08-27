@@ -9,6 +9,6 @@
 #import <SpriteKit/SpriteKit.h>
 #import "MainView.h"
 
-@interface MainScene : SKScene
+@interface MainScene : SKScene<SKPhysicsContactDelegate>
 
 @end

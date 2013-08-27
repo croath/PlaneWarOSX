@@ -10,9 +10,10 @@
 #import "PlayerSprite.h"
 #import "EnemySprite.h"
 
-#define ENEMIES_MAX_COUNT     400
+#define ENEMIES_MAX_COUNT     100
 
 @interface MainScene(){
+  NSUInteger _score;
   SKLabelNode *_scoreLabel;
   
   SKSpriteNode *_player;
@@ -27,7 +28,8 @@
 -(id)initWithSize:(CGSize)size {
   if (self = [super initWithSize:size]) {
     self.backgroundColor = [SKColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1.0];
-//    [self setBackgroundColor:[SKColor colorWithPatternImage:[NSImage imageNamed:@"bg"]]];
+    [self.physicsWorld setContactDelegate:self];
+    
     [self addScoreLabel];
     [self setUpPlayer];
     [self setUpEnemies];
@@ -48,8 +50,7 @@
 }
 
 - (void)setUpPlayer{
-  _player = [SKSpriteNode spriteNodeWithImageNamed:@"plane"];
-  _player.position = CGPointMake(CGRectGetMidX(self.frame), 50);
+  _player = [PlayerSprite newPlayerAtPostion:CGPointMake(CGRectGetMidX(self.frame), 50)];
   _player.zPosition = 10.f;
   _player.scale = 0.5;
   [self addChild:_player];
@@ -100,7 +101,22 @@
     [sprite runAction:action completion:^{
       [sprite setInScene:NO];
       [sprite removeFromParent];
+      _score += 1000;
+      [self updateScore];
     }];
   }
+}
+
+- (void)updateScore{
+  [_scoreLabel setText:[NSString stringWithFormat:@"%lu", (unsigned long)_score]];
+}
+
+- (void)didBeginContact:(SKPhysicsContact *)contact{
+  _score = 0;
+  [self updateScore];
+}
+
+- (void)didEndContact:(SKPhysicsContact *)contact{
+  
 }
 @end
