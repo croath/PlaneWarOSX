@@ -57,10 +57,14 @@
 }
 
 - (void)setUpEnemies{
-  _enemiesArray = [NSMutableArray arrayWithCapacity:ENEMIES_MAX_COUNT];
-  for (int i = 0; i < ENEMIES_MAX_COUNT; i ++) {
-    EnemySprite *sprite = [EnemySprite newEnemyWithEnemyType:EnemyTypeSmall];
-    [_enemiesArray addObject:sprite];
+  if (_enemiesArray == nil) {
+    _enemiesArray = [NSMutableArray arrayWithCapacity:ENEMIES_MAX_COUNT];
+    for (int i = 0; i < ENEMIES_MAX_COUNT; i ++) {
+      EnemySprite *sprite = [EnemySprite newEnemyWithEnemyType:EnemyTypeSmall];
+      if (![sprite inParentHierarchy:self]) {
+        [_enemiesArray addObject:sprite];
+      }
+    }
   }
 }
 
@@ -111,12 +115,14 @@
   [_scoreLabel setText:[NSString stringWithFormat:@"%lu", (unsigned long)_score]];
 }
 
-- (void)didBeginContact:(SKPhysicsContact *)contact{
+- (void)restart{
   _score = 0;
   [self updateScore];
+  [self removeChildrenInArray:_enemiesArray];
+  [self setUpEnemies];
 }
 
-- (void)didEndContact:(SKPhysicsContact *)contact{
-  
+- (void)didBeginContact:(SKPhysicsContact *)contact{
+  [self restart];
 }
 @end

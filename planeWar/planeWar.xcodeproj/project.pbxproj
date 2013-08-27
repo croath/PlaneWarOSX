@@ -31,6 +31,7 @@
 		27A08EE217C80370007F53D3 /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A08EDD17C80370007F53D3 /* MainScene.m */; };
 		27A08EE317C80370007F53D3 /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A08EDF17C80370007F53D3 /* MainView.m */; };
 		27A08EE517C80A37007F53D3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27A08EE417C80A37007F53D3 /* MainMenu.xib */; };
+		27A5F38517CC8B2900C2DB6F /* BulletSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A5F38417CC8B2900C2DB6F /* BulletSprite.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,8 @@
 		27A08EDE17C80370007F53D3 /* MainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainView.h; sourceTree = "<group>"; };
 		27A08EDF17C80370007F53D3 /* MainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainView.m; sourceTree = "<group>"; };
 		27A08EE417C80A37007F53D3 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		27A5F38317CC8B2900C2DB6F /* BulletSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BulletSprite.h; sourceTree = "<group>"; };
+		27A5F38417CC8B2900C2DB6F /* BulletSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BulletSprite.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +251,8 @@
 				271DB62317CAFAA80027C9C9 /* PlayerSprite.m */,
 				271DB62817CB5FB70027C9C9 /* EnemySprite.h */,
 				271DB62917CB5FB70027C9C9 /* EnemySprite.m */,
+				27A5F38317CC8B2900C2DB6F /* BulletSprite.h */,
+				27A5F38417CC8B2900C2DB6F /* BulletSprite.m */,
 			);
 			path = Sprite;
 			sourceTree = "<group>";
@@ -356,6 +361,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27A5F38517CC8B2900C2DB6F /* BulletSprite.m in Sources */,
 				27A08EE117C80370007F53D3 /* AppDelegate.m in Sources */,
 				271DB62717CB01C20027C9C9 /* PlaneSprite.m in Sources */,
 				27A08EE317C80370007F53D3 /* MainView.m in Sources */,
