@@ -30,6 +30,7 @@
   
   [sprite setEnemyType:type];
   [sprite setScale:0.5f];
+  [sprite setSpeed:10.f];
   
   return sprite;
 }

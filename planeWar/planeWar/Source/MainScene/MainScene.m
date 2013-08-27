@@ -10,7 +10,7 @@
 #import "PlayerSprite.h"
 #import "EnemySprite.h"
 
-#define ENEMIES_MAX_COUNT     20
+#define ENEMIES_MAX_COUNT     400
 
 @interface MainScene(){
   SKLabelNode *_scoreLabel;
@@ -42,6 +42,7 @@
   _scoreLabel.fontSize = 15;
   _scoreLabel.position = CGPointMake(CGRectGetMidX(self.frame),
                                      CGRectGetMaxY(self.frame) - 15);
+  _scoreLabel.zPosition = 10;
   
   [self addChild:_scoreLabel];
 }
@@ -49,13 +50,14 @@
 - (void)setUpPlayer{
   _player = [SKSpriteNode spriteNodeWithImageNamed:@"plane"];
   _player.position = CGPointMake(CGRectGetMidX(self.frame), 50);
+  _player.zPosition = 10.f;
   _player.scale = 0.5;
   [self addChild:_player];
 }
 
 - (void)setUpEnemies{
   _enemiesArray = [NSMutableArray arrayWithCapacity:ENEMIES_MAX_COUNT];
-  for (int i = 0; i < [_enemiesArray count]; i ++) {
+  for (int i = 0; i < ENEMIES_MAX_COUNT; i ++) {
     EnemySprite *sprite = [EnemySprite newEnemyWithEnemyType:EnemyTypeSmall];
     [_enemiesArray addObject:sprite];
   }
@@ -73,6 +75,7 @@
 -(void)update:(CFTimeInterval)currentTime {
   /* Called before each frame is rendered */
   [self movePlayer];
+  [self addEnemies];
 }
 
 - (void)movePlayer{
@@ -81,4 +84,23 @@
   [_player runAction:action];
 }
 
+- (void)addEnemies{
+  EnemySprite *sprite = [self availabelSprite];
+  if (sprite != nil && rand() % 77 == 0) {
+    [sprite setInScene:YES];
+    CGFloat x = random()%1000*((CGRectGetMaxX(self.frame) - sprite.frame.size.width)/1000) + sprite.frame.size.width/2;
+    CGPoint position = CGPointMake(x, CGRectGetMaxY(self.frame) + sprite.frame.size.height);
+    [sprite setPosition:position];
+    CGPoint dest = CGPointMake(x, -sprite.frame.size.height);
+    [self addChild:sprite];
+    
+    CGFloat time = fabs(dest.y - position.y) / sprite.speed;
+    SKAction *action = [SKAction moveTo:dest duration:time];
+    
+    [sprite runAction:action completion:^{
+      [sprite setInScene:NO];
+      [sprite removeFromParent];
+    }];
+  }
+}
 @end
