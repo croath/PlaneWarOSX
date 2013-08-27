@@ -4,7 +4,7 @@ PlaneWar
 the plane war using Sprite Kit of OS X 10.9
 
 
-仿照微信打飞机游戏，制作基于SKKit的打飞机游戏，仅适用于OS X 10.9+
+仿照微信打飞机游戏，制作基于Sprite Kit的打飞机游戏，仅适用于OS X 10.9+
 
 遵循GPL v2协议，项目中所有来自微信(WeChat)的图片、声音资源版权属于微信，如有任何版权争议请联系我。
 
