@@ -18,6 +18,8 @@ typedef enum{
 
 @property (nonatomic) EnemyType enemyType;
 
+- (CGFloat)score;
+
 + (instancetype)newEnemyWithEnemyType:(EnemyType)type;
 + (instancetype)newEnemyWithEnemyType:(EnemyType)type postion:(CGPoint)position;
 

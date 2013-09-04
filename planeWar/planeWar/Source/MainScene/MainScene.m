@@ -14,6 +14,9 @@
 #define ENEMIES_MAX_COUNT     100
 #define BULLET_RATE           15
 
+#define ENEMY_MIDDIUM_RATE    10
+#define ENEMY_LARGE_RATE      21
+
 @interface MainScene(){
   NSUInteger _score;
   SKLabelNode *_scoreLabel;
@@ -62,7 +65,15 @@
   if (_enemiesArray == nil) {
     _enemiesArray = [NSMutableArray arrayWithCapacity:ENEMIES_MAX_COUNT];
     for (int i = 0; i < ENEMIES_MAX_COUNT; i ++) {
-      EnemySprite *sprite = [EnemySprite newEnemyWithEnemyType:EnemyTypeSmall];
+      EnemySprite *sprite;
+      
+      if (i % ENEMY_LARGE_RATE == 0) {
+        sprite = [EnemySprite newEnemyWithEnemyType:EnemyTypeLarge];
+      } else if (i % ENEMY_MIDDIUM_RATE == 0) {
+        sprite = [EnemySprite newEnemyWithEnemyType:EnemyTypeMiddium];
+      } else {
+        sprite = [EnemySprite newEnemyWithEnemyType:EnemyTypeSmall];
+      }
       if (sprite.parent != self) {
         [_enemiesArray addObject:sprite];
       }
@@ -84,7 +95,7 @@ static int bullet_setup_count = 0;
     BulletSprite *bullet = [BulletSprite newBulletWithType:BulletTypeNormal position:position];
     [self addChild:bullet];
     
-    NSPoint dest  = CGPointMake(position.x, CGRectGetMaxY(self.frame) + bullet.size.height);
+    NSPoint dest  = CGPointMake(position.x, position.y + CGRectGetHeight(self.frame) / 2.f);
     CGFloat time = fabs(dest.y - position.y) / bullet.speed;
     SKAction *action = [SKAction moveTo:dest duration:time];
     [bullet runAction:action completion:^{
@@ -94,11 +105,11 @@ static int bullet_setup_count = 0;
 }
 
 - (EnemySprite*)availabelSprite{
-  for (EnemySprite *sprite in _enemiesArray) {
-    if (sprite != nil && sprite.parent != self) {
-      [sprite removeAllActions];
-      return sprite;
-    }
+  int rand_count = rand() % [_enemiesArray count];
+  EnemySprite *sprite = [_enemiesArray objectAtIndex:rand_count];
+  if (sprite != nil && sprite.parent != self) {
+    [sprite removeAllActions];
+    return sprite;
   }
   return nil;
 }
@@ -156,7 +167,14 @@ static int bullet_setup_count = 0;
     
     [contact.bodyB.node removeAllActions];
     [contact.bodyB.node removeFromParent];
-    _score += 1000;
+    
+    EnemySprite *sprite;
+    if ([contact.bodyA.node isKindOfClass:[EnemySprite class]]) {
+      sprite = (EnemySprite*)contact.bodyA.node;
+    } else {
+      sprite = (EnemySprite*)contact.bodyB.node;
+    }
+    _score += sprite.score;
     [self updateScore];
   }
 }

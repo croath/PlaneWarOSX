@@ -51,4 +51,19 @@
   return sprite;
 }
 
+- (CGFloat)score{
+  switch (_enemyType) {
+    case EnemyTypeMiddium:
+      return 2000.f;
+      break;
+    case EnemyTypeLarge:
+      return 10000.f;
+      break;
+    case EnemyTypeSmall:
+    default:
+      return 1000.f;
+      break;
+  }
+}
+
 @end
