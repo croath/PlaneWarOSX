@@ -14,10 +14,9 @@ static NSPoint _point;
 
 - (void)awakeFromNib{
   NSTrackingArea *trackingArea = [[NSTrackingArea alloc] initWithRect:[self visibleRect]
-                                   // feed in NSTrackingMouseMoved to get mouseMoved: events too
-                                                               options:NSTrackingMouseEnteredAndExited | NSTrackingMouseMoved | NSTrackingInVisibleRect |NSTrackingActiveAlways
-                                                                 owner:self
-                                                              userInfo:nil];
+                                                              options:NSTrackingMouseEnteredAndExited | NSTrackingMouseMoved | NSTrackingInVisibleRect |NSTrackingActiveAlways
+                                                                owner:self
+                                                             userInfo:nil];
 	
 	[self addTrackingArea:trackingArea];
 }

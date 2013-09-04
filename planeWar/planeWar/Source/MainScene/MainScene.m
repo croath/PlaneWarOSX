@@ -142,6 +142,7 @@ static int bullet_setup_count = 0;
     
     [sprite runAction:action completion:^{
       [sprite removeFromParent];
+      [sprite setBlood:sprite.maxBlood];
     }];
   }
 }
@@ -162,20 +163,28 @@ static int bullet_setup_count = 0;
       [contact.bodyB.node isKindOfClass:[PlayerSprite class]]) {
     [self restart];
   } else {
-    [contact.bodyA.node removeAllActions];
-    [contact.bodyA.node removeFromParent];
-    
-    [contact.bodyB.node removeAllActions];
-    [contact.bodyB.node removeFromParent];
-    
     EnemySprite *sprite;
+    BulletSprite *bullet;
     if ([contact.bodyA.node isKindOfClass:[EnemySprite class]]) {
       sprite = (EnemySprite*)contact.bodyA.node;
+      bullet = (BulletSprite*)contact.bodyB.node;
     } else {
       sprite = (EnemySprite*)contact.bodyB.node;
+      bullet = (BulletSprite*)contact.bodyA.node;
     }
-    _score += sprite.score;
-    [self updateScore];
+    
+    [sprite setBlood:sprite.blood - bullet.power];
+    
+    if (sprite.blood <= 0) {
+      [sprite removeFromParent];
+      [sprite removeAllActions];
+      [sprite setBlood:sprite.maxBlood];
+      _score += sprite.score;
+      [self updateScore];
+    }
+    
+    [bullet removeFromParent];
+    [bullet removeAllActions];
   }
 }
 @end
